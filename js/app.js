@@ -115,7 +115,7 @@
       $scope.isDoubanLogin = data;
     });
 
-    // tag
+    // tag 切换tab选项框
     $scope.showTag = function(tag_id){
       $scope.current_tag = tag_id;
       $scope.is_window_hidden = 1;
@@ -1351,6 +1351,7 @@
         function($http, $scope, $timeout, angularPlayer, loWeb){
     $scope.myplaylists = []; // 我的歌单
 
+    // 加载自己的收藏歌单 从浏览器缓存中获取存储对象， 返回数据进行渲染
     $scope.loadMyPlaylist = function(){
       loWeb.get('/show_myplaylist').success(function(data) {
         $scope.myplaylists = data.result; 

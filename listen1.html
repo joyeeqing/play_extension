@@ -69,24 +69,6 @@
          <button class="btn btn-default" ng-click="cancelNewDialog(0)">取消</button>
       </div>
 
-        <!-- login douban dialog -->
-<!--         <div ng-show="dialog_type==2" class="dbimport" ng-controller="ImportController"  ng-init="getLoginInfo()" >
-          <form class="form-signin" name="loginForm" ng-submit="loginForm.$valid && loginDouban()" novalidate ng-show="!isDoubanLogin">
-            <label for="inputEmail" class="sr-only">邮件地址</label>
-            <input type="email" id="inputEmail" class="form-control" name="email" placeholder="登录邮箱" ng-model="session.user" required autofocus>
-            <label for="inputPassword" class="sr-only">密码</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="密码" ng-model="session.password" required>
-            <img ng-src="{{validcode_url}}" class="valid-img" ng-click="getLoginInfo()">
-            <label for="captchaSolution" class="sr-only">验证码</label>
-            <input type="text" id="captchaSolution" class="form-control" placeholder="请输入验证码，看不清请点击图片" ng-model="session.solution" required>
-            <button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="!loginForm.$valid">登录</button>
-            <p class='security-notice'>注：本软件不保存和传输密码给除豆瓣以外的任何组织和个人。</p>
-          </form>
-          <button class="btn btn-lg btn-primary btn-block" ng-click="importDoubanFav()" ng-show="isDoubanLogin">导入红心兆赫到我的歌单</button>
-          <button class="btn btn-lg btn-primary btn-block" ng-click="logoutDouban()" ng-show="isDoubanLogin">退出登录</button>
-          <p ng-show="isDoubanLogin">{{ status }}</p>
-        </div> -->
-
         <!-- edit playlist dialog -->
         <div ng-show="dialog_type==3" class="dialog-editplaylist">
           <div class="form-group">
@@ -127,7 +109,7 @@
 
        
 
-      <ul class="dialog-backuplist" ng-show="dialog_type==8">
+      <!-- <ul class="dialog-backuplist" ng-show="dialog_type==8">
         <li class="detail-add" ng-click="newDialogOption(9)">
           <img src="images/mycover.jpg" />
           <h2> 新建歌单备份 </h2>
@@ -136,14 +118,14 @@
           <img ng-src="images/mycover.jpg" />
           <h2> {{ backup.id }} {{backup.description}}</h2>
         </li>
-      </ul>
+      </ul> -->
 
       <!-- create new backup dialog -->
-      <div ng-show="dialog_type==9" class="dialog-newbackup">
+      <!-- <div ng-show="dialog_type==9" class="dialog-newbackup">
          <button class="btn btn-primary confirm-button" ng-click="backupMySettings2Gist(null, true);closeDialog();">创建公开备份</button>
          <button class="btn btn-primary confirm-button" ng-click="backupMySettings2Gist(null, false);closeDialog();">创建私有备份</button>
          <button class="btn btn-default" ng-click="cancelNewDialog(8)">取消</button>
-      </div>
+      </div> -->
 
       <ul class="dialog-backuplist" ng-show="dialog_type==10">
         <li ng-repeat="backup in myBackup track by $index" ng-class-odd="'odd'" ng-class-even="'even'" ng-click="importMySettingsFromGist(backup.id); closeDialog();">
@@ -254,7 +236,7 @@
               <li ng-class="{'active':isActiveTab(0)}" ng-click="changeTab(0)"><a>网易</a></li>
               <li ng-class="{'active':isActiveTab(1)}" ng-click="changeTab(1)"><a href="#">虾米</a></li>
               <li  ng-class="{'active':isActiveTab(2)}" ng-click="changeTab(2)"><a href="#">QQ音乐</a></li>
-              <li  ng-class="{'active':isActiveTab(3)}" ng-click="changeTab(3)" ng-show="isDoubanLogin"><a href="#">豆瓣</a></li>
+              <!-- <li  ng-class="{'active':isActiveTab(3)}" ng-click="changeTab(3)" ng-show="isDoubanLogin"><a href="#">豆瓣</a></li> -->
               <img class="searchspinner" id="spinner" src="images/loading.gif" ng-show="loading">
             </ul>
             <ul class="detail-songlist">
@@ -301,7 +283,7 @@
                 <a title="播放歌单" class="play" ng-show="playlist_title!=''" ng-click="playMylist(list_id)">播放</a>
                 <a title="添加到当前播放" class="add" ng-show="playlist_title!=''" ng-click="addMylist(list_id)">添加到当前播放</a>
                 <a title="收藏歌单" class="clone" ng-show="playlist_title!='' && !is_mine" ng-click="clonePlaylist(list_id)">收藏</a>
-                <a title="编辑歌单" class="edit" ng-show="playlist_title!='' && is_mine" ng-click="showDialog(3, {list_id: list_id, playlist_title: playlist_title, cover_img_url: cover_img_url})">编辑</a>
+                <!-- <a title="编辑歌单" class="edit" ng-show="playlist_title!='' && is_mine" ng-click="showDialog(3, {list_id: list_id, playlist_title: playlist_title, cover_img_url: cover_img_url})">编辑</a> -->
                 <a title="原始链接" class="link" ng-show="playlist_title!=''" open-url="playlist_source_url">原始链接</a>
 				        <!-- <a title="导入合并" class="merge" ng-show="playlist_title!='' && is_mine" ng-click="showDialog(6)">导入合并</a> -->
               </div>
